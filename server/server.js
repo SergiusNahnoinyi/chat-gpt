@@ -1,6 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 import express from "express";
-import logger from "morgan";
+import morgan from "morgan";
+import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
@@ -12,11 +13,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const app = express();
-const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
-app.use(logger(formatsLogger));
 app.use(cors());
-app.use(express.json());
+app.use(morgan("common"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(process.env.PORT, () => {
   console.log(
