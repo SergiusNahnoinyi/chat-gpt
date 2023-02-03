@@ -1,7 +1,50 @@
+:root {
+  --primary-text: "Roboto", sans-serif;
+  --primary-font-size: 16px;
+  --primary-font-weight: 500;
+  --primary-line-height: 24px;
+  --primary-letter-spacing: 0.02em;
+
+  --primary-text-color: black;
+  --secondary-text-color: grey;
+  --accent-color: orangered;
+
+  --primary-background-color: white;
+  --secondary-background-color: lightblue;
+}
+
 body {
+  font-family: var(--primary-text);
+  font-size: var(--primary-font-size);
+  font-weight: var(--primary-font-weight);
+  line-height: var(--primary-line-height);
+  letter-spacing: var(--primary-letter-spacing);
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
