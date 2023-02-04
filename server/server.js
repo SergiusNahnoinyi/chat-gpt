@@ -8,7 +8,7 @@ dotenv.config();
 
 const configuration = new Configuration({
   organization: "org-8X0v8WRmDnvDoIJ2tO5hTirj",
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 const openai = new OpenAIApi(configuration);
@@ -30,7 +30,7 @@ app.post("/", async (req, res) => {
     model: "text-davinci-003",
     prompt: "Say this is a test",
     max_tokens: 7,
-    temperature: 0,
+    temperature: 0
   });
   res.json({ data: response.data });
   console.log(response);
