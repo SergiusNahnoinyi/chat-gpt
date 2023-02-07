@@ -1,12 +1,25 @@
 .header {
-  background-color: #282c34;
-  color: white;
+  text-align: center;
 }
 
 .main {
-  color: #61dafb;
+  height: 100vh;
+  display: flex;
+}
+
+.sidemenu {
+  width: 240px;
+  padding: 10px;
+  background-color: var(--secondary-background-color);
+}
+
+.chat {
+  flex: 1;
+  padding: 20px;
 }
 
 .footer {
-  color: black;
+  padding: 20px;
+  text-align: center;
+  color: var(--secondary-text-color);
 }
