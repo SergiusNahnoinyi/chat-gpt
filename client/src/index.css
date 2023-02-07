@@ -1,27 +1,27 @@
 :root {
-  --primary-text: "Roboto", sans-serif;
+  --primary-text: "Martel Sans", sans-serif;
   --primary-font-size: 16px;
-  --primary-font-weight: 500;
-  --primary-line-height: 24px;
+  --primary-font-weight: 400;
   --primary-letter-spacing: 0.02em;
 
-  --primary-text-color: black;
+  --primary-text-color: white;
   --secondary-text-color: grey;
-  --accent-color: orangered;
+  --accent-color: black;
 
-  --primary-background-color: white;
-  --secondary-background-color: lightblue;
+  --primary-background-color: #343541;
+  --secondary-background-color: #202123;
 }
 
-body {
+body,
+html {
+  height: 100%;
+  margin: 0;
   font-family: var(--primary-text);
   font-size: var(--primary-font-size);
   font-weight: var(--primary-font-weight);
-  line-height: var(--primary-line-height);
   letter-spacing: var(--primary-letter-spacing);
   color: var(--primary-text-color);
   background-color: var(--primary-background-color);
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
