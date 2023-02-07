@@ -37,7 +37,7 @@
     "nodemon": "^2.0.20"
   },
   "lint-staged": {
-    "*.{js}": "eslint --fix",
+    "*.js": "eslint --fix",
     "*.{js,json,md}": "prettier --write --config ./.prettierrc"
   }
 }
