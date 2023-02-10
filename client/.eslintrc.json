@@ -13,6 +13,10 @@
   "rules": {
     "quotes": ["error", "double"],
     "comma-dangle": ["error", "never"],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-vars": "warn",
+    "no-unused-expressions": "warn",
+    "no-console": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
