@@ -17,10 +17,28 @@ export default function HomePage() {
     }
   ]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setChatLog([...chatLog, { user: "me", message: `${input}` }]);
+
+    // eslint-disable-next-line prefer-const
+    let chatLogNew = [...chatLog, { user: "me", message: `${input}` }];
     setInput("");
+    setChatLog(chatLogNew);
+
+    const messages = chatLogNew.map((message) => message.message).join("\n");
+
+    const response = await fetch("http://localhost:5000", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: messages
+      })
+    });
+
+    const data = await response.json();
+    setChatLog([...chatLogNew, { user: "gpt", message: `${data.message}` }]);
   };
 
   return (
