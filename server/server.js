@@ -32,7 +32,7 @@ app.post("/", async (req, res) => {
     model: "text-davinci-003",
     prompt: `${message}`,
     max_tokens: 50,
-    temperature: 0
+    temperature: 0.5
   });
 
   res.json({ message: response.data.choices[0].text });
