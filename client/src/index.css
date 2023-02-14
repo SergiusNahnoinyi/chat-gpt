@@ -10,6 +10,7 @@
 
   --primary-background-color: #343541;
   --secondary-background-color: #202123;
+  --third-background-color: #444654;
 }
 
 body,
@@ -21,7 +22,6 @@ html {
   font-weight: var(--primary-font-weight);
   letter-spacing: var(--primary-letter-spacing);
   color: var(--primary-text-color);
-  /* background-color: var(--primary-background-color); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
