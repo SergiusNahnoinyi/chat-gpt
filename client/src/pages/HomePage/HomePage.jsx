@@ -1,5 +1,10 @@
 import "./HomePage.css";
 
 export default function HomePage() {
-  return <div className="home">HomePage</div>;
+  return (
+    <main className="app">
+      <aside className="side-menu">Aside</aside>
+      <section className="chat-box">Chat</section>
+    </main>
+  );
 }

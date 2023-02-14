@@ -1,3 +1,16 @@
-.home {
-  color: red;
+.app {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.side-menu {
+  width: 25%;
+  padding: 4px;
+  background-color: var(--secondary-background-color);
+}
+
+.chat-box {
+  flex: 1;
+  background: var(--primary-background-color);
 }
