@@ -1,0 +1,27 @@
+.chat-message.chatgpt {
+  background-color: var(--third-background-color);
+}
+
+.chat-message-center {
+  max-width: 640px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 24px;
+}
+
+.message {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+}
+
+.avatar.chatgpt {
+  background-color: #0da37f;
+}
