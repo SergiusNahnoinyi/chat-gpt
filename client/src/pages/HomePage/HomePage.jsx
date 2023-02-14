@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import NewChatButton from "../../components/NewChatButton/NewChatButton";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
+import ChatForm from "../../components/ChatForm/ChatForm";
 
 import "./HomePage.css";
 
@@ -52,13 +53,11 @@ export default function HomePage() {
           // eslint-disable-next-line react/no-array-index-key
           <ChatMessage key={index} message={message} />
         ))}
-        <form onSubmit={handleSubmit} className="chat-form">
-          <input
-            className="chat-input"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </form>
+        <ChatForm
+          input={input}
+          setInput={setInput}
+          handleSubmit={handleSubmit}
+        />
       </section>
     </main>
   );

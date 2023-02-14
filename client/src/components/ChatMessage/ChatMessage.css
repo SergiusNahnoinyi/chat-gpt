@@ -23,5 +23,5 @@
 }
 
 .avatar.chatgpt {
-  background-color: #0da37f;
+  background-color: var(--accent-color);
 }
