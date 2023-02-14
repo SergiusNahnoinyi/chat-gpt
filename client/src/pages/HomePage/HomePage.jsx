@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import NewChatButton from "../../components/NewChatButton/NewChatButton";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 
 import "./HomePage.css";
@@ -43,7 +44,9 @@ export default function HomePage() {
 
   return (
     <main className="app">
-      <aside className="side-menu">Aside</aside>
+      <aside className="side-menu">
+        <NewChatButton onClick={() => setChatLog([])} />
+      </aside>
       <section className="chat-box">
         {chatLog.map((message, index) => (
           // eslint-disable-next-line react/no-array-index-key
