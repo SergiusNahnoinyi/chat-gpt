@@ -6,11 +6,14 @@
 
   --primary-text-color: white;
   --secondary-text-color: grey;
-  --accent-color: black;
+  --accent-color: #0da37f;
 
   --primary-background-color: #343541;
   --secondary-background-color: #202123;
   --third-background-color: #444654;
+
+  --primary-animation: 300ms ease-in-out;
+  --secondary-animation: 500ms ease-in-out;
 }
 
 body,
