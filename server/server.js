@@ -26,12 +26,14 @@ app.listen(process.env.PORT, () => {
 });
 
 app.post("/", async (req, res) => {
+  const { message } = req.body;
+
   const response = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: "Say this is a test",
-    max_tokens: 7,
+    prompt: `${message}`,
+    max_tokens: 50,
     temperature: 0
   });
-  res.json({ data: response.data });
-  console.log(response);
+
+  res.json({ message: response.data.choices[0].text });
 });
