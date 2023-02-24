@@ -3,6 +3,7 @@ import { useState } from "react";
 import NewChatButton from "../../components/NewChatButton/NewChatButton";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import ChatForm from "../../components/ChatForm/ChatForm";
+import Hero from "../../components/Hero/Hero";
 import Loader from "../../components/Loader/Loader";
 
 import "./HomePage.css";
@@ -45,6 +46,7 @@ export default function HomePage() {
       </aside>
       <section className="chat-box">
         {isLoading && <Loader />}
+        {chatLog.length === 0 && <Hero />}
         {chatLog.map((message, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <ChatMessage key={index} message={message} />
