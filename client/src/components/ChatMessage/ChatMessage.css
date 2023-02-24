@@ -5,23 +5,51 @@
 .chat-message-center {
   max-width: 640px;
   display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   padding: 12px 24px;
 }
 
 .message {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   background: white;
   border-radius: 50%;
 }
 
 .avatar.chatgpt {
   background-color: var(--accent-color);
+}
+
+svg {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .message {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .chat-message-center {
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
 }
