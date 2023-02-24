@@ -1,14 +1,19 @@
+import { motion } from "framer-motion";
+
 import "./ChatMessage.css";
 
 export default function ChatMessage({ message }) {
   return (
-    <div className={`chat-message ${message.user === "gpt" && "chatgpt"}`}>
+    <motion.div
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className={`chat-message ${message.user === "gpt" && "chatgpt"}`}
+    >
       <div className="chat-message-center">
         <div className={`avatar ${message.user === "gpt" && "chatgpt"}`}>
           {message.user === "gpt" && (
             <svg
-              width={41}
-              height={41}
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               strokeWidth={1.5}
@@ -22,6 +27,6 @@ export default function ChatMessage({ message }) {
         </div>
         <p className="message">{message.message}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
