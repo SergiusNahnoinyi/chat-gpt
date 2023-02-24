@@ -1,6 +1,6 @@
 import "./Hero.css";
 
-function Hero() {
+export default function Hero() {
   return (
     <div className="hero-container">
       <h1 className="hero-heading">ChatGPT</h1>
@@ -118,5 +118,3 @@ function Hero() {
     </div>
   );
 }
-
-export default Hero;
