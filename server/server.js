@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const configuration = new Configuration({
-  organization: "org-8X0v8WRmDnvDoIJ2tO5hTirj",
+  organization: process.env.OPENAI_API_ORG,
   apiKey: process.env.OPENAI_API_KEY
 });
 
