@@ -24,6 +24,8 @@
 }
 
 .avatar.chatgpt {
+  min-width: 20px;
+  min-height: 20px;
   background-color: var(--accent-color);
 }
 
@@ -49,6 +51,7 @@ svg {
   }
 
   svg {
+    display: block;
     width: 40px;
     height: 40px;
   }
