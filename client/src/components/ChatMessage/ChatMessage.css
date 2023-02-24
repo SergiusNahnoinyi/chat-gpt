@@ -39,6 +39,11 @@ svg {
     height: 40px;
   }
 
+  .avatar.chatgpt {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
   .message {
     padding-left: 40px;
     padding-right: 40px;
