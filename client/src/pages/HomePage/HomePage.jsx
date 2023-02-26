@@ -4,7 +4,7 @@ import Container from "../../components/Container";
 import Hero from "../../components/Hero";
 import NewChatButton from "../../components/NewChatButton/NewChatButton";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
-import ChatForm from "../../components/ChatForm/ChatForm";
+import ChatForm from "../../components/ChatForm";
 
 import Loader from "../../components/Loader/Loader";
 
@@ -74,7 +74,6 @@ export default function HomePage() {
       <section className="chat-box">
         <Container>
           {isLoading && <Loader />}
-
           {chatLog.length !== 0 ? (
             chatLog.map((message, index) => (
               <ChatMessage key={index} message={message} />
@@ -82,13 +81,9 @@ export default function HomePage() {
           ) : (
             <Hero />
           )}
-          <ChatForm
-            input={input}
-            setInput={setInput}
-            handleSubmit={handleSubmit}
-          />
         </Container>
       </section>
+      <ChatForm input={input} setInput={setInput} handleSubmit={handleSubmit} />
     </main>
   );
 }
