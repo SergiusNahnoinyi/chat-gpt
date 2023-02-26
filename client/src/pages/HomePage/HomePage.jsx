@@ -16,7 +16,7 @@ export default function HomePage() {
   const [models, setModels] = useState([]);
 
   const getModels = async () => {
-    const response = await fetch("http://localhost:5000/models");
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/models`);
     const data = await response.json();
     setModels(data.models);
   };
@@ -33,7 +33,7 @@ export default function HomePage() {
     try {
       const messages = chatLogNew.map((message) => message.message).join("\n");
 
-      const response = await fetch("http://localhost:5000", {
+      const response = await fetch(process.env.REACT_APP_BASE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
