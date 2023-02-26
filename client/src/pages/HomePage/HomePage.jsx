@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-import Hero from "../../components/Hero";
+import ModelSelector from "../../components/ModelSelector";
 import NewChatButton from "../../components/NewChatButton";
+import Hero from "../../components/Hero";
 import ChatMessage from "../../components/ChatMessage";
 import ChatForm from "../../components/ChatForm";
 import Loader from "../../components/Loader/Loader";
@@ -53,16 +54,14 @@ export default function HomePage() {
     setIsLoading(false);
   };
 
+  const handleChange = (e) => {
+    setSelectedModel(e.currentTarget.value);
+  };
+
   return (
     <>
       <header className="header">
-        <select onChange={(e) => setSelectedModel(e.target.value)}>
-          {models.map((model) => (
-            <option key={model.id} value={model.id}>
-              {model.id}
-            </option>
-          ))}
-        </select>
+        <ModelSelector models={models} onChange={handleChange} />
         <NewChatButton onClick={() => setChatLog([])} />
       </header>
       <main className="main">
