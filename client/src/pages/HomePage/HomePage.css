@@ -1,23 +1,56 @@
-.app {
-  display: flex;
-  min-height: 100vh;
-}
-
-.side-menu {
-  width: 25%;
+.header {
+  position: fixed;
+  width: 100%;
   padding: 10px;
-  background-color: var(--secondary-background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box !important;
+  background-color: var(--primary-background-color);
 }
 
-.chat-box {
-  flex: 1;
-  position: relative;
-  background: var(--primary-background-color);
+.main {
+  background-color: var(--primary-background-color);
 }
 
-@media (min-width: 1024px) {
-  .side-menu {
-    width: 260px;
-    padding: 10px;
+.chat-section {
+  padding-top: 80px;
+  padding-bottom: 110px;
+}
+
+.form-section {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-background-color);
+  border-top: 1px solid grey;
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 30%;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--secondary-background-color);
+  }
+
+  .main {
+    width: 70%;
+    margin-left: auto;
+  }
+
+  .chat-section {
+    padding-top: 0px;
+    padding-bottom: 110px;
+  }
+
+  .form-section {
+    width: 75%;
   }
 }

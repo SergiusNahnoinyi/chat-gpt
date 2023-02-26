@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
-import NewChatButton from "../../components/NewChatButton/NewChatButton";
-import ChatMessage from "../../components/ChatMessage/ChatMessage";
-import ChatForm from "../../components/ChatForm/ChatForm";
-import Hero from "../../components/Hero/Hero";
+import ModelSelector from "../../components/ModelSelector";
+import NewChatButton from "../../components/NewChatButton";
+import Hero from "../../components/Hero";
+import ChatMessage from "../../components/ChatMessage";
+import ChatForm from "../../components/ChatForm";
 import Loader from "../../components/Loader/Loader";
 
 import "./HomePage.css";
 
 export default function HomePage() {
-  const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([]);
-  const [isLoading, setIsLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedModel, setSelectedModel] = useState("babbage");
   const [models, setModels] = useState([]);
 
@@ -25,11 +25,8 @@ export default function HomePage() {
     getModels();
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (input) => {
     const chatLogNew = [...chatLog, { user: "me", message: `${input}` }];
-    setInput("");
     setChatLog(chatLogNew);
     setIsLoading(true);
 
@@ -57,30 +54,31 @@ export default function HomePage() {
     setIsLoading(false);
   };
 
+  const handleChange = (e) => {
+    setSelectedModel(e.currentTarget.value);
+  };
+
   return (
-    <main className="app">
-      <aside className="side-menu">
-        <select onChange={(e) => setSelectedModel(e.target.value)}>
-          {models.map((model) => (
-            <option key={model.id} value={model.id}>
-              {model.id}
-            </option>
-          ))}
-        </select>
+    <>
+      <header className="header">
+        <ModelSelector models={models} onChange={handleChange} />
         <NewChatButton onClick={() => setChatLog([])} />
-      </aside>
-      <section className="chat-box">
+      </header>
+      <main className="main">
         {isLoading && <Loader />}
-        {chatLog.length === 0 && <Hero />}
-        {chatLog.map((message, index) => (
-          <ChatMessage key={index} message={message} />
-        ))}
-        <ChatForm
-          input={input}
-          setInput={setInput}
-          handleSubmit={handleSubmit}
-        />
-      </section>
-    </main>
+        <section className="chat-section">
+          {chatLog.length !== 0 ? (
+            chatLog.map((message, index) => (
+              <ChatMessage key={index} message={message} />
+            ))
+          ) : (
+            <Hero />
+          )}
+        </section>
+        <section className="form-section">
+          <ChatForm onSubmit={handleSubmit} />
+        </section>
+      </main>
+    </>
   );
 }
