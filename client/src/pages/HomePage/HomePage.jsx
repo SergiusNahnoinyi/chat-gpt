@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import Container from "../../components/Container";
 import Hero from "../../components/Hero";
 import NewChatButton from "../../components/NewChatButton";
 import ChatMessage from "../../components/ChatMessage";
@@ -55,8 +54,8 @@ export default function HomePage() {
   };
 
   return (
-    <main className="app">
-      <aside className="side-menu">
+    <>
+      <header className="header">
         <select onChange={(e) => setSelectedModel(e.target.value)}>
           {models.map((model) => (
             <option key={model.id} value={model.id}>
@@ -65,9 +64,9 @@ export default function HomePage() {
           ))}
         </select>
         <NewChatButton onClick={() => setChatLog([])} />
-      </aside>
-      <section className="chat-section">
-        <Container>
+      </header>
+      <main className="main">
+        <section className="chat-section">
           {chatLog.length !== 0 ? (
             chatLog.map((message, index) => (
               <ChatMessage key={index} message={message} />
@@ -76,11 +75,11 @@ export default function HomePage() {
             <Hero />
           )}
           {isLoading && <Loader />}
-        </Container>
-      </section>
-      <section className="form-section">
-        <ChatForm onSubmit={handleSubmit} />
-      </section>
-    </main>
+        </section>
+        <section className="form-section">
+          <ChatForm onSubmit={handleSubmit} />
+        </section>
+      </main>
+    </>
   );
 }
