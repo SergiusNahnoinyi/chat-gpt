@@ -65,6 +65,7 @@ export default function HomePage() {
         <NewChatButton onClick={() => setChatLog([])} />
       </header>
       <main className="main">
+        {isLoading && <Loader />}
         <section className="chat-section">
           {chatLog.length !== 0 ? (
             chatLog.map((message, index) => (
@@ -73,7 +74,6 @@ export default function HomePage() {
           ) : (
             <Hero />
           )}
-          {isLoading && <Loader />}
         </section>
         <section className="form-section">
           <ChatForm onSubmit={handleSubmit} />
