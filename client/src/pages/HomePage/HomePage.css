@@ -4,9 +4,7 @@
 }
 
 .side-menu {
-  width: 25%;
-  padding: 10px;
-  background-color: var(--secondary-background-color);
+  display: none;
 }
 
 .chat-box {
@@ -15,9 +13,10 @@
   background: var(--primary-background-color);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .side-menu {
-    width: 260px;
+    width: 25%;
     padding: 10px;
+    background-color: var(--secondary-background-color);
   }
 }
