@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
 import NewChatButton from "../../components/NewChatButton/NewChatButton";
-import ChatMessage from "../../components/ChatMessage/ChatMessage";
+import ChatMessage from "../../components/ChatMessage";
 import ChatForm from "../../components/ChatForm";
 
 import Loader from "../../components/Loader/Loader";
@@ -67,7 +67,7 @@ export default function HomePage() {
         </select>
         <NewChatButton onClick={() => setChatLog([])} />
       </aside>
-      <section className="chat-box-section">
+      <section className="chat-section">
         <Container>
           {chatLog.length !== 0 ? (
             chatLog.map((message, index) => (
