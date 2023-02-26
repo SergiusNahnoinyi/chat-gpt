@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import Container from "../../components/Container";
 import NewChatButton from "../../components/NewChatButton/NewChatButton";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import ChatForm from "../../components/ChatForm/ChatForm";
@@ -70,16 +71,18 @@ export default function HomePage() {
         <NewChatButton onClick={() => setChatLog([])} />
       </aside>
       <section className="chat-box">
-        {isLoading && <Loader />}
-        {chatLog.length === 0 && <Hero />}
-        {chatLog.map((message, index) => (
-          <ChatMessage key={index} message={message} />
-        ))}
-        <ChatForm
-          input={input}
-          setInput={setInput}
-          handleSubmit={handleSubmit}
-        />
+        <Container>
+          {isLoading && <Loader />}
+          {chatLog.length === 0 && <Hero />}
+          {chatLog.map((message, index) => (
+            <ChatMessage key={index} message={message} />
+          ))}
+          <ChatForm
+            input={input}
+            setInput={setInput}
+            handleSubmit={handleSubmit}
+          />
+        </Container>
       </section>
     </main>
   );
