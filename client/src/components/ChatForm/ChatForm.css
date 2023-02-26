@@ -1,9 +1,13 @@
 .chat-form {
-  /* width: 100%; */
+  width: 80%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chat-form__input {
+  width: 100%;
   padding: 12px;
   font-size: 1em;
   color: var(--primary-text-color);

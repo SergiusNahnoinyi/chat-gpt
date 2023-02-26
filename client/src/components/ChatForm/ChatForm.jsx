@@ -11,7 +11,6 @@ export default function ChatForm({ onSubmit }) {
     setInput(e.currentTarget.value);
   };
 
-  // eslint-disable-next-line consistent-return
   const handleSubmit = (e) => {
     e.preventDefault();
 
