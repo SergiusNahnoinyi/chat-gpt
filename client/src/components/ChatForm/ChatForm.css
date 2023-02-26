@@ -1,14 +1,9 @@
 .chat-form {
-  padding: 18px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
+  /* width: 100%; */
+  position: relative;
 }
 
-.chat-input {
-  width: 80%;
+.chat-form__input {
   padding: 12px;
   font-size: 1em;
   color: var(--primary-text-color);
@@ -19,13 +14,13 @@
   outline: none;
 }
 
-@media (min-width: 1024px) {
-  .chat-form {
-    padding: 24px;
-  }
-
-  .chat-input {
-    width: 50%;
-    font-size: 1.25em;
-  }
+.chat-form__button {
+  position: absolute;
+  right: 0;
+  width: 43px;
+  height: 43px;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }

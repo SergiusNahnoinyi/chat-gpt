@@ -11,9 +11,8 @@ import Loader from "../../components/Loader/Loader";
 import "./HomePage.css";
 
 export default function HomePage() {
-  const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([]);
-  const [isLoading, setIsLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedModel, setSelectedModel] = useState("babbage");
   const [models, setModels] = useState([]);
 
@@ -27,11 +26,8 @@ export default function HomePage() {
     getModels();
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (input) => {
     const chatLogNew = [...chatLog, { user: "me", message: `${input}` }];
-    setInput("");
     setChatLog(chatLogNew);
     setIsLoading(true);
 
@@ -71,9 +67,8 @@ export default function HomePage() {
         </select>
         <NewChatButton onClick={() => setChatLog([])} />
       </aside>
-      <section className="chat-box">
+      <section className="chat-box-section">
         <Container>
-          {isLoading && <Loader />}
           {chatLog.length !== 0 ? (
             chatLog.map((message, index) => (
               <ChatMessage key={index} message={message} />
@@ -81,9 +76,12 @@ export default function HomePage() {
           ) : (
             <Hero />
           )}
+          {isLoading && <Loader />}
         </Container>
       </section>
-      <ChatForm input={input} setInput={setInput} handleSubmit={handleSubmit} />
+      <section className="form-section">
+        <ChatForm onSubmit={handleSubmit} />
+      </section>
     </main>
   );
 }
