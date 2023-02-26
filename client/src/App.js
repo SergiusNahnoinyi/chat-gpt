@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Loader from "./components/Loader/Loader";
 
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 export default function App() {
   return (

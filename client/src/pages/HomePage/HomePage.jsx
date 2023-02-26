@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 
 import Container from "../../components/Container";
 import Hero from "../../components/Hero";
-import NewChatButton from "../../components/NewChatButton/NewChatButton";
+import NewChatButton from "../../components/NewChatButton";
 import ChatMessage from "../../components/ChatMessage";
 import ChatForm from "../../components/ChatForm";
-
 import Loader from "../../components/Loader/Loader";
 
 import "./HomePage.css";
